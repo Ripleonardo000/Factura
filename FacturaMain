@@ -1,0 +1,63 @@
+import java.util.Scanner;
+public class FacturaMain {
+    //(La clase Factura) Cree una clase llamada Factura, que una ferretería podría utilizar para representar una factura para un artículo vendido en la tienda.
+// Una Factura debe incluir cuatro piezas de información como variables de instancia: un número de pieza (rigo String), la descripción de la pieza (tipo String),
+// la cantidad de artículos de ese tipo que se van a comprar (tipo 1nt) y el precio por artículo (double). Su clase debe tener un constructor que inicialice las cuatro
+// variables de instancia. Proporcionc un método establecer y uno obvener para cada variable de instancia. Además, propor done un método llamado obtenerMontoFactura,
+// que calcule el monto de la factura (es decir, que multiplique la can- tidad por el precio por artículo) y después lo devuelva como un valor double. Si la cantidad no es
+// positiva, debe establecerse en 0, si el precio por articulo no es positivo, debe establecerse en 0.0, escriba una aplicacion de prueba llamada pruebafactura, que demuestra
+// las capacidades de la clase factura.
+    public static void main(String[] args) {
+        Factura f1= new Factura();
+        //set
+        Scanner entrada= new Scanner(System.in);
+        System.out.print("**  POR FAVOR INGRESA EL NUMERO DE PIEZA:  ** ");
+        String nPieza;
+
+        nPieza=entrada.next();
+        f1.setNumeroPieza(nPieza);
+
+        System.out.print("**  POR FAVOR INGRESA LA DESCRICPION DE LA PIEZA:  ** ");
+        String descripciondelaPieza;
+        descripciondelaPieza=entrada.next();
+        f1.setDescripcionPieza(descripciondelaPieza);
+
+        System.out.print("** INGRESA LA CANTIDAD QUE SE VA COMPRAR: ** ");
+        int montoPieza;
+        montoPieza=Integer.parseInt(entrada.next());
+        f1.setCantidadPieza(montoPieza);
+
+        System.out.print("** INGRESA EL PRECIO DEL ARTICULO: **");
+        double precioArticulo;
+        precioArticulo=Double.parseDouble(entrada.next());
+        f1.setPrecioPieza(precioArticulo);
+
+        System.out.println("//FACTURA//");
+        System.out.println("EL NUMERO DE PIEZA ES: "+f1.getNumeroPieza());
+        System.out.println("LA DESCRIPCION ES:  "+f1.getDescripcionPieza());
+        System.out.println("LA CANTIDAD ES:  "+f1.getCantidadPieza());
+        System.out.println("EL PRECIO UNITARIO ES:  "+f1.getPrecioPieza());
+        System.out.println("EL MONTO TOTAL ES:  "+f1.calcularMontoFactura());
+
+        Factura f2;
+        System.out.print("**  POR FAVOR INGRESA EL NUMERO DE PIEZA:  **");
+        nPieza=entrada.next();
+
+        System.out.print("**  POR FAVOR INGRESA LA DESCRICPION DE LA PIEZA:  ** ");
+        descripciondelaPieza=entrada.next();
+
+        System.out.print("** INGRESA LA CANTIDAD QUE SE VA COMPRAR: ** ");
+        montoPieza=Integer.parseInt(entrada.next());
+
+        System.out.print("** INGRESA EL PRECIO DEL ARTICULO: **");
+        precioArticulo=Double.parseDouble(entrada.next());
+
+        f2= new Factura(nPieza, descripciondelaPieza, precioArticulo, montoPieza);
+        System.out.println("//FACTURA//");
+        System.out.println("EL NUMERO DE PIEZA ES: "+f2.getNumeroPieza());
+        System.out.println("LA DESCRIPCION ES: "+f2.getDescripcionPieza());
+        System.out.println("LA CANTIDAD ES: "+f2.getCantidadPieza());
+        System.out.println("EL PRECIO UNITARIO ES:  "+f2.getPrecioPieza());
+        System.out.println("EL MONTO TOTAL ES:  "+f2.calcularMontoFactura());
+    }
+}

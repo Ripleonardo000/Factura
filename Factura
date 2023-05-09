@@ -1,0 +1,54 @@
+public class Factura {
+    //Atributos
+    private String nPieza;
+    private String descripciondelaPieza;
+    private double precioPieza;
+    private int montoPieza;
+
+    public Factura(String nPieza, String descripciondelaPieza, double precioPieza, int montoPieza) {
+        this.nPieza = nPieza;
+        this.descripciondelaPieza = descripciondelaPieza;
+        this.precioPieza = precioPieza;
+        this.montoPieza = montoPieza;
+    }
+    public Factura() {
+
+    }
+
+    //Setter
+    public void setNumeroPieza(String numeroPieza) {
+        this.nPieza = numeroPieza;
+    }
+    public void setDescripcionPieza(String descripciondelaPieza) {
+        this.descripciondelaPieza = descripciondelaPieza;
+    }
+    public void setPrecioPieza(double montoPieza) {
+        if(precioPieza<0){
+            precioPieza=0;
+        }this.precioPieza = montoPieza;
+    }
+    public void setCantidadPieza(int montoPieza) {
+        if(montoPieza<0){
+            montoPieza=0;
+        }this.montoPieza = montoPieza;
+    }
+    //Get
+    public double getPrecioPieza(){
+
+        return precioPieza;
+    }
+    public String getNumeroPieza() {
+        return nPieza;
+    }
+    public String getDescripcionPieza() {
+        return descripciondelaPieza;
+    }
+    public int getCantidadPieza() {
+
+        return montoPieza;
+    }
+    public double calcularMontoFactura(){
+        return montoPieza*precioPieza;
+    }
+
+}
